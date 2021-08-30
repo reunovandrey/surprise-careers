@@ -1,0 +1,38 @@
+/* ====================
+# FOOTER: Footer Socials
+==================== */
+.site-footer {
+  &-socials {
+    grid-area: bc / bc;
+  }
+  &-social {
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-item {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    &-link {
+      display: block;
+      color: $lightgrey;
+      img, svg {
+        display: block;
+      }
+      svg {
+        fill: currentColor;
+      }
+      &:hover {
+        color: $primary;
+      }      
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-socials {
+      grid-area: fs;
+      margin-top: 32px;
+    }
+  }
+}

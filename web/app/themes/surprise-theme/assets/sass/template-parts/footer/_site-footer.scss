@@ -1,0 +1,41 @@
+/* ====================
+# FOOTER: Site Footer
+==================== */
+.site-footer {
+  &-inner {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "tl tc tr"
+      "bl bc br";
+    column-gap: $grid-gutter-width;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'xl')) {
+    &-inner {
+      grid-template-areas:
+        "tl tc tr"
+        "bl bc br";
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-inner {
+      grid-template-areas:
+        "fb"
+        "fm"
+        "fi"
+        "fi"
+        "fs"
+        "fc";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {}
+}

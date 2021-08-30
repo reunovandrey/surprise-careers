@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+{% block main %}
+    <header class="page__header">
+        <div class="container">
+            <div class="heading__meta">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="{{ site.url }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ site.url }}/career">{{ page.title }}</a>
+                        </li>
+                    </ul>
+                </nav>
+                <h2 class="heading__title">{{ page.title }}</h2>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="team__content">
+        <div class="container">
+{#            {{ page | d }}#}
+        </div>
+    </section>
+
+
+    <section class="team__filter block-filter">
+        <div class="container">
+            <form action="#" name="vacancy_filter" id="vacancy_filter">
+                <div class="filter__fields">
+                    <div class="filter__searchwrapper">
+                        <input type="text" name="search" id="search" placeholder="Search for vacancies">
+                    </div>
+
+                    <div class="filter__locationwrapper">
+                        <select name="careers_location" id="careers_location">
+                            <option value="-1">- All -</option>
+                            {% for loc in locations %}
+                                <option value="{{ loc.term_id }}">{{ loc.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input class="filter__submit" type="submit" value="Search">
+                </div>
+            </form>
+            <div class="vacancy__skills">
+
+            </div>
+
+            <div class="vacancy__tagline" style="display:{{ fields.show_initial_results ? 'block' : 'none' }}">
+                <strong>Results: </strong> <span class="post_count"> {{ careers.found_posts }} {{ function('ngettext', 'vacancy', 'vacancies', careers.found_posts) }}</span>
+                <span class="search-tags"></span>
+            </div>
+            <div class="vacancy__results">
+                {% for job in careers %}
+                    <div class="vacancy__card">
+                        <h4 class="vacancy__title">{{ job.post_title }}</h4>
+                        <div class="vacancy__location">
+                            {% include site.theme.url ~ '/assets/images/icons/map-icon.svg' %}
+                            <span>{{ job.terms('locations')[0] }}</span>
+                        </div>
+                        <div class="vacancy__category">
+                            {% include site.theme.url ~ '/assets/images/icons/category-icon.svg' %}
+                            <span>{{ job.terms('category')[0] }}</span>
+                            <a href="{{ job.link }}" class="vacancy__link">Learn more</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

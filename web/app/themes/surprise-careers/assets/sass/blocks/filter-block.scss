@@ -1,0 +1,16 @@
+@import '../utils/functions';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@import '../base/include-media';
+
+.block-filter {
+	h2 {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	.view-all {
+		float: right;
+		color: $primary;
+	}
+}

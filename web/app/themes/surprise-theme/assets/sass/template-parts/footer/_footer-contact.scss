@@ -1,0 +1,31 @@
+/* ====================
+# FOOTER: Footer Contact
+==================== */
+.site-footer {
+  &-info {
+    text-align: right;
+    &-1 {
+      grid-area: tr;
+    }
+
+    &-2 {
+      grid-area: br;
+      align-self: end;
+    }
+  }
+  &-contact {
+    margin: 0;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-info {
+      text-align: center;
+      grid-area: auto;
+      margin-top: 32px;
+
+      &-2 {
+        margin-top: 12px;
+      }
+    }
+  }
+}

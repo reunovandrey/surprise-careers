@@ -1,0 +1,8 @@
+.footer {
+	&__copyrights {
+		@include media("<laptop") {
+			grid-area: fc;
+			margin-top: 32px;
+		}
+	}
+}

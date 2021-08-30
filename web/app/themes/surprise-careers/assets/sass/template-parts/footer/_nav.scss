@@ -1,0 +1,27 @@
+.footer__menu {
+	@include media("<laptop") {
+		grid-area: fm;
+		margin-top: 31px;
+	}
+
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		justify-content: center;
+		align-items: center;
+
+		&>li {
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
+
+		a {
+			white-space: nowrap;
+			font-weight: 500;
+			letter-spacing: -0.2px;
+			text-decoration: none;
+		}
+	}
+}

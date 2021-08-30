@@ -1,0 +1,3 @@
+{{ logo_clickable ? '<a href="' ~ site.url ~ '" target="_self" rel="home" class="logo">' : '<span class="logo">' }}
+{{ source(site.theme.url ~ '/assets/images/' ~ logo_file) }}
+{{ logo_clickable ? '</a>' : '</span>' }}

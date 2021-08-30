@@ -1,0 +1,9 @@
+<div class="text-block-wrapper">
+    <div class="container">
+        <div class="text-block">
+            <h2>{{ fields.title }}</h2>
+            {{ fields.text | wpautop }}
+            <a href="{{ fields.cta.url }}" class="bttn bttn-primary bttn-arrow" target="{{ fields.cta.target }}">{{ fields.cta.title }}</a>
+        </div>
+    </div>
+</div>

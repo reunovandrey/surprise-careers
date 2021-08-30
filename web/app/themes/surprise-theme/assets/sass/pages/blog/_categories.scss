@@ -1,0 +1,120 @@
+/* ====================
+# Blog: CATEGORIES GRID
+==================== */
+.blog {
+  &-categories {
+    &-wrapper {
+      padding-top: 48px;
+      padding-bottom: 36px;
+    }
+    &-title {
+      // margin-bottom: 1px;
+    }
+  }
+
+  // Grid
+  .category {
+    &-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
+    &-item {
+      position: relative;
+      flex: 0 0 100/12*2%;
+      max-width: 100/12*2%;
+      padding: 0.75rem;
+    }
+    &-card {
+      padding: 40px 24px 12px;
+      border-radius: 1rem;
+      width: 100%;
+      min-height: 188px;
+      text-align: center;
+      &:hover {
+        box-shadow: 0 0 10px rgba($black, .4), 0 0 20px rgba($black, .1);
+        // transform: rotateZ(1.5deg);
+      }
+      picture, img, svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 7px;
+      }
+    }
+    &-name {
+      color: $white;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'xl')) {
+    // Grid
+    .category {
+      &-card {
+        padding: 12px;
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        picture, img, svg {
+          margin-bottom: 4px;
+        }
+      }
+      &-name {
+        line-height: 1.25;
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-categories {
+      &-wrapper {
+        padding-bottom: 50px;
+      }
+    }
+    // Grid
+    .category {
+      &-item {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        padding-bottom: 0;
+      }
+      &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 224px;
+        padding: 20px;
+        picture, img, svg {
+          margin-bottom: 1px;
+        }
+      }
+      &-name {
+        padding-top: 2px;
+        max-width: 120px;
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    &-categories {
+      &-wrapper {
+        padding-top: 40px;
+        padding-bottom: 65px;
+      }
+    }
+
+    // Grid
+    .category {
+      &-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      &-card {
+        min-height: 152px;
+        padding: 18px;
+      }
+    }
+  }
+}

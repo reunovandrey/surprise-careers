@@ -1,0 +1,168 @@
+@import '../utils/functions';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@import '../base/include-media';
+
+.hero__wrapper {
+	width: 100%;
+}
+
+.hero__slider {
+	&__block {
+		margin-left: 96px;
+		margin-right: 96px;
+		background-color: $alice_blue;
+		padding: 80px 80px 0;
+		border-radius:16px;
+		margin-bottom: 240px;
+	}
+
+	&__main {
+		display: flex;
+		align-items: center;
+
+		@include media("<laptop") {
+			flex-direction: column;
+		}
+
+		.slides__text,
+		.slides__images {
+			width: 50%;
+			@include media("<laptop") {
+				width: 100%;
+			}
+		}
+	}
+
+	&__nav {
+		background-color: white;
+		border-radius: 16px;
+		margin: 0 auto;
+		height: 240px;
+		width: max-content;
+		border: 1px solid $stroke;
+		box-shadow: 0px 4px 8px rgba(20, 125, 250, 0.05);
+		transform: translateY(50%);
+		padding: 10px;
+		display: flex;
+		gap: 10px;
+
+		@include media("<laptop") {
+			display: none;
+		}
+
+		.preview {
+			cursor: pointer;
+			flex-direction: column;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 16px;
+			min-width: 210px;
+
+			@include media("<desktop") {
+				min-width: 170px;
+			}
+
+			&:hover,
+			&.active {
+				background-color: $alice_blue1;
+			}
+
+			img {
+				width: auto;
+				height: auto;
+				display: block;
+				//border-radius: 8px;
+				margin-bottom: 32px;
+			}
+
+			&__text {
+				color: $midgrey;
+				font-weight: normal;
+				font-size: 18px;
+				line-height: 24px;
+				margin-bottom: 4px;
+			}
+
+			&__title {
+				font-weight: 900;
+				font-size: 24px;
+				line-height: 32px;
+				letter-spacing: -0.01em;
+				color: $text_primary;
+
+			}
+		}
+	}
+
+}
+
+.slides {
+	&__text {
+		width: 50%;
+		height: 250px;
+
+		@include media("<laptop") {
+			height: 400px;
+		}
+
+		h1 {
+			strong {
+				font-weight: 900;
+				color: $primary;
+			}
+		}
+
+		p {
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 40px;
+			margin-top: 24px;
+			margin-bottom: 24px;
+			width: 75%;
+		}
+	}
+
+	&__images {
+		position: relative;
+
+		.swiper-pagination {
+			display: none;
+
+			@include media("<laptop") {
+				display: block;
+				bottom: -30px;
+			}
+		}
+
+		.swiper-wrapper {
+			align-items: center;
+		}
+		.slide {
+			filter: drop-shadow(0px 8px 24px rgba(20, 125, 250, 0.12));
+			transition: transform 0.2s ease, opacity .2s ease;
+
+			img {
+				border-radius: 16px;
+			}
+		}
+
+
+		.swiper-slide,
+		.swiper-slide-prev {
+			transform: scale(0);
+			opacity: 0;
+		}
+		.swiper-slide-active {
+			opacity: 1;
+			transform: scale(1);
+		}
+		.swiper-slide-next {
+			transform: scale(.85);
+			opacity: 1;
+		}
+	}
+}
+

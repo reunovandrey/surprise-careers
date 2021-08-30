@@ -1,0 +1,69 @@
+{
+    "key": "group_60c9cf44df59d",
+    "title": "Surprise Settings: General",
+    "fields": [
+        {
+            "key": "field_60f81fbe03772",
+            "label": "Logo link",
+            "name": "custom_logo_link",
+            "type": "link",
+            "instructions": "This link will affect on <em>Header logo<\/em> and <em>Footer logo<\/em>.<br>\r\nLeave empty to use default logo link behavior: link to homepage for all pages except homepage.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "66.66667",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_60facdcd165ca",
+            "label": "App Store Link",
+            "name": "app_store_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_60facde8165cb",
+            "label": "Google Play Link",
+            "name": "google_play_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-general"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1627049503
+}

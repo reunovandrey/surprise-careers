@@ -1,0 +1,12 @@
+<section class="cta__block">
+    <div class="container">
+        <div class="refer__text">
+            <p><strong>{{ cta_block.title }}</strong></p>
+            <p>{{ cta_block.text }}</p>
+        </div>
+        <div class="refer__submit">
+            {% set target = cta_block.button.target ? '' %}
+            <a class="button" target="{{ target }}" href="{{ cta_block.button.url }}">{{ cta_block.button.title }}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+.breadcrumbs {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+
+		&:after {
+			content: '/';
+			opacity: 0.5;
+			color: $text_primary;
+			margin-left: 4px;
+		}
+
+		&:last-child:after {
+			content: none;
+		}
+	}
+
+	span,
+	a {
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: $text_primary;
+	}
+}

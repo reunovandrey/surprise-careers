@@ -1,0 +1,68 @@
+{% if is_preview %}
+    <img style="margin: 0 auto; display: block" src="{{ site.theme.uri ~ '/inc/blocks/filter-block/block-cover.png' }}" alt="">
+{% else %}
+
+    <section class="careers_filter block-filter">
+        <div class="container">
+        {% if fields.title %}
+            <h2>{{ fields.title }}</h2>
+        {% endif %}
+
+        <form action="{{ page.link }}" id="vacancy_filter" name="vacancy_filter">
+            <div class="filter__wrapper">
+                <div class="filter__fields">
+                    <div class="filter__searchwrapper">
+                        <input type="text" name="search" id="search" placeholder="Search for vacancies">
+                    </div>
+                    <div class="filter__categorywrapper">
+                        <select name="careers_category" id="careers_category">
+                            <option value="-1">- All -</option>
+                            {% for cat in categories %}
+                                <option value="{{ cat.term_id }}">{{ cat.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="filter__locationwrapper">
+                        <select name="careers_location" id="careers_location">
+                            <option value="-1">- All -</option>
+                            {% for loc in locations %}
+                                <option value="{{ loc.term_id }}">{{ loc.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <input class="filter__submit" type="submit" value="Search">
+            </div>
+        </form>
+
+        <div class="vacancy__skills">
+
+        </div>
+
+        <div class="vacancy__tagline" style="display:{{ fields.show_initial_results ? 'block' : 'none' }}">
+            {% if fields.view_all %}
+            <a href="{{ fields.view_all.url }}" target="{{ fields.view_all.target }}" class="view-all">{{ fields.view_all.title }}</a>
+            {% endif %}
+            <strong>Results: </strong> <span class="post_count"> {{ careers.found_posts }} {{ function('ngettext', 'vacancy', 'vacancies', careers.found_posts) }}</span>
+            <span class="search-tags"></span>
+        </div>
+
+        <div class="vacancy__results">
+            {% for job in careers %}
+                <div class="vacancy__card">
+                    <h4 class="vacancy__title">{{ job.post_title }}</h4>
+                    <div class="vacancy__location">
+                        {% include site.theme.url ~ '/assets/images/icons/map-icon.svg' %}
+                        <span>{{ job.terms('locations')[0] }}</span>
+                    </div>
+                    <div class="vacancy__category">
+                        {% include site.theme.url ~ '/assets/images/icons/category-icon.svg' %}
+                        <span>{{ job.terms('category')[0] }}</span>
+                        <a href="{{ job.link }}" class="vacancy__link">Learn more</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+    </section>
+{% endif %}

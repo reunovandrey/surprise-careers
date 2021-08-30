@@ -1,0 +1,56 @@
+.cta__block	{
+	margin-bottom: 80px;
+
+	@include media("<laptop") {
+		margin-bottom: 20px;
+	}
+
+	.container {
+		border-radius: 16px;
+		border: 1px solid $stroke;
+		padding: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media("<laptop") {
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	a.button {
+		color: $primary;
+		background-color: white;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 800;
+		border-radius: 50px;
+		border: 1px solid $stroke;
+		padding: 16px 64px;
+	}
+
+	p {
+		font-size: 20px;
+		line-height: 32px;
+		color: $midgrey;
+		margin-top: 0;
+		margin-bottom: 8px;
+
+		@include media("<laptop") {
+			font-size: 18px;
+			line-height: 26px;
+		}
+	}
+	strong {
+		color: $midnight;
+		font-size: 32px;
+		line-height: 44px;
+		font-weight: 900;
+
+		@include media("<laptop") {
+			font-size: 26px;
+			line-height: 34px;
+		}
+	}
+}

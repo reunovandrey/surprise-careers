@@ -1,0 +1,56 @@
+.post-article-card {
+  .entry {
+    &-header {
+      height: 225px;
+      margin-bottom: 12px;
+
+      .post-thumbnail-link {
+        display: block;
+        height: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &-content {
+      .post-categories {
+        margin-bottom: 1px;
+      }
+      .post-excerpt {
+        margin-top: 13px;
+        margin-bottom: 8px;
+      }
+    }
+    &-title {
+      a {
+        font-weight: inherit;
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'xl' )) {
+    .entry {
+      &-header {
+        height: 263px;
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg' )) {
+    .entry {
+      &-header {
+        height: 196px;
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'sm' )) {
+    .entry {
+      &-header {
+        height: 186px;
+      }
+    }
+  }
+}

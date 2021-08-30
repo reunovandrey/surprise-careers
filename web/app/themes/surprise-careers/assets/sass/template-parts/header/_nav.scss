@@ -1,0 +1,163 @@
+.header {
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+
+		@include media("<laptop") {
+			display: none;
+			position: fixed;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			font-weight: 500;
+
+			@include media("<=desktop") {
+				flex-basis: 0;
+				flex-grow: 1;
+			}
+
+			li {
+				padding-left: 16px;
+				padding-right: 16px;
+
+				&.current_page_item a {
+					color: $primary;
+				}
+
+				@include media("<=desktop"){
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+			}
+
+			a {
+				display: block;
+				text-decoration: none;
+				font-weight: 500;
+				letter-spacing: -0.2px;
+			}
+		}
+
+	}
+
+	&__mobmenu {
+		display: none;
+
+		&.active {
+			.burger-line {
+				&-top {
+					stroke-dashoffset: -132px;
+				}
+				&-middle {
+					stroke-dashoffset: -71px;
+				}
+				&-bottom {
+					stroke-dashoffset: -132px;
+				}
+			}
+		}
+
+		@include media("<laptop"){
+			display: block;
+			position: relative;
+			width: 32px;
+			height: 32px;
+			border: none;
+			outline: none;
+			background-color: transparent;
+			padding: 0;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.burger-icon {
+			position: relative;
+			z-index: 90;
+			transition: transform .4s ease;
+			transform: scale(1.25);
+			fill: currentColor;
+		}
+		.burger-line {
+			fill: none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke: currentColor;
+			stroke-width: 5.5;
+			stroke-linecap: round;
+
+			&-top {
+				stroke-dasharray: 40 172;
+			}
+
+			&-middle {
+				stroke-dasharray: 40 111;
+			}
+
+			&-bottom {
+				stroke-dasharray: 40 172;
+			}
+		}
+	}
+
+	.bttn-primary {
+		display: inline-flex;
+		position: relative;
+		align-items: center;
+		font-weight: 900;
+		letter-spacing: 0.2px;
+		padding: 14px 15px 12px 23px;
+		border: none;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			margin-left: 3px;
+			background-image: url(../../assets/images/arrow.svg);
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+
+	.bttn-try {
+		display: none;
+
+		@include media("<laptop") {
+			display: block;
+			font-weight: 800;
+			font-size: 14px;
+			line-height: 24px;
+			padding: 4px 16px;
+			margin-right: 10px;
+			white-space: nowrap;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	.mobile__menu {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			a {
+				padding-top: 19px;
+				padding-bottom: 19px;
+				font-size: 16px;
+				font-weight: 500;
+				letter-spacing: -0.2px;
+			}
+		}
+	}
+}

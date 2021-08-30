@@ -1,0 +1,24 @@
+<ul>
+    <li>
+        <a target="_blank"
+           aria-label="Facebook"
+           rel="noreferrer noopener"
+           href="https://www.facebook.com/sharer/sharer.php?display=page&u={{ share_data.url }}&p[images][0]={{ share_data.media }}&p[title]={{ share_data.title }}">
+            {% include site.theme.url ~ '/assets/images/social-icons/facebook.svg' %} {% if showlabels %}  Facebook{% endif %}
+        </a>
+    </li>
+    <li><a target="_blank"
+           aria-label="Linked In"
+           rel="noreferrer noopener"
+           href="https://twitter.com/intent/tweet?url={{ share_data.url }}&text={{ share_data.title }}">
+            {% include site.theme.url ~ '/assets/images/social-icons/twitter.svg' %} {% if showlabels %}  Twitter{% endif %}
+        </a>
+    </li>
+    <li><a target="_blank"
+           aria-label="Twitter"
+           rel="noreferrer noopener"
+           href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_data.url }}&title=">
+            {% include site.theme.url ~ '/assets/images/social-icons/linkedin.svg' %} {% if showlabels %}  Linked In{% endif %}
+        </a>
+    </li>
+</ul>

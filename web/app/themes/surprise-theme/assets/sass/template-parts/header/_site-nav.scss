@@ -1,0 +1,133 @@
+/* ====================
+# HEADER: Site Navigation
+==================== */
+.site-header {
+  &-navbar {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 1px;
+    padding-right: $grid-space;
+    color: $midnight;
+
+    @media screen and(max-width: map-get($breakpoints, 'lg')){
+      padding-right: 0;
+      padding-top: 0;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .bttn-primary {
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      padding: 14px 15px 12px 23px;
+      border: none;
+      &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
+        background-image: url('../../assets/public/images/svg/arrow.svg');
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+  }
+
+
+  &-signin {
+    margin-right: 2rem;
+    color: inherit;
+  }
+  .get-the-app {
+    background-color: $midnight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    min-height: 48px;
+    width: 166px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+
+    svg{
+      fill: white;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    &-cta {
+      justify-content: center;
+    }
+    &-signin {
+      margin-right: $grid-space;
+      //margin-bottom: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    &-navbar {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &-nav {
+      display: none;
+      position: absolute;
+    }
+  }
+}
+
+/* Primary Menu */
+.site-header .primary-menu,
+.site-header .primary-menu>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  font-weight: 500;
+
+  >li {
+    padding-left: $grid-space * 2;
+    padding-right: $grid-space * 2;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+
+  .current-menu-item a {
+    color: $primary;
+  }
+
+  @media screen and (max-width: 1199px) {
+    flex-basis: 0;
+    flex-grow: 1;
+    >li {
+      padding-left: $grid-space;
+      padding-right: $grid-space;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+  }
+}

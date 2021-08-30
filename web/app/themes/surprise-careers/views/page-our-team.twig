@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block main %}
+    <header class="page__heading simple">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="{{ site.url }}">Home</a></li>
+                    <li><span>{{ post.title }}</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="page-title">{{ post.title }}</h2>
+            <div class="page-content">
+                {{ post.content }}
+            </div>
+            <section class="teams-wrapper">
+                <div class="teams">
+                    {% for team in teams %}
+                        <div class="team" style="padding-top: {{ random(250, 500) }}px; background-color:{{ random(['#FC7A66','#8D62D3', '#26C1B8', '#FF6FB5', '#147DFA']) }};">
+                            <h2>{{ team.name }}</h2>
+                            <div class="description">
+                                {{ team.description | wpautop }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% if cta_block %}
+                {% include 'template-parts/common/cta-block.twig' %}
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

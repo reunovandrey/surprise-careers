@@ -1,0 +1,13 @@
+/* ====================
+# FOOTER: Footer Copyright
+==================== */
+.site-footer {
+  &-copy {
+	align-self: end;
+
+	@media screen and (max-width: map-get($breakpoints, 'lg')) {
+	  grid-area: fc;
+	  margin-top: 32px;
+	}
+  }
+}

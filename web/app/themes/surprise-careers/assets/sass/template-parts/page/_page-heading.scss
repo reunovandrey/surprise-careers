@@ -1,0 +1,60 @@
+.page__heading {
+	background-color: #F4F7FB;
+	padding-top: 63px;
+	padding-bottom: 63px;
+	margin-bottom: 80px;
+
+	&.simple {
+		background-color: transparent;
+
+		.breadcrumbs{
+			li,
+			a,
+			span {
+				color: $text_primary;
+			}
+		}
+	}
+
+	@include media("<laptop") {
+		margin-bottom: 20px;
+	}
+
+	.heading{
+		&__meta {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&__title {
+			color: $midnight;
+			margin-top: 16px;
+		}
+
+		&__subtitle {
+			color: $midnight;
+			margin-top: 16px;
+
+			svg {
+				vertical-align: bottom;
+			}
+		}
+
+	}
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+
+	.breadcrumbs{
+		li,
+		a,
+		span {
+			color: #333;
+		}
+	}
+
+}

@@ -1,0 +1,10 @@
+.footer__social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include media("<laptop") {
+		grid-area: fs;
+		margin-top: 32px;
+	}
+}

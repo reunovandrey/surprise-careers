@@ -1,0 +1,151 @@
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "include-media";
+
+body {
+  //background-color: green;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 24px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+.careers{
+  &__block {
+    padding: 40px;
+    border: 1px dashed silver;
+    margin: 20px auto;
+  }
+  &__selectors{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  &__selector {
+    border: 1px dashed silver;
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+.job {
+  &__block {
+    padding: 40px;
+    border: 1px dashed silver;
+    margin: 20px auto;
+
+    &.visuals {
+      video, img {
+        max-height: 200px;
+      }
+    }
+  }
+
+  &__skills {
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    margin: 40px;
+  }
+  &__skill {
+    align-self: stretch;
+  }
+}
+
+
+
+.career {
+  display: flex;
+  justify-content: space-between;
+  //border: 3px solid red;
+
+  &__line {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    margin: 3px;
+  }
+
+}
+
+
+
+/**
+* TABS
+ */
+.tab{
+  &__navigation {
+    display: flex;
+  }
+
+  &__link {
+    margin-right: 10px;
+    a {
+      padding: 10px 20px;
+      text-decoration: none;
+      &.active {
+        background-color: lightcyan;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: $font_primary;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  letter-spacing: -0.01em;
+}
+
+
+
+a {
+  color: $primary;
+}
+
+a,
+button,
+*[type="submit"],
+*[type="button"] {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition-property: color, background-color, border, box-shadow, transform;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+}
+
+a {
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+@import "template-parts/footer";

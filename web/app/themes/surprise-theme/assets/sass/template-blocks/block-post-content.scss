@@ -1,0 +1,123 @@
+/* ====================
+# Block: HERO
+==================== */
+@import '../utilities/color';
+@import '../utilities/sizes';
+
+.section-post-content {
+  .section-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .post {
+
+    // Content
+    &-content-inner {
+
+      p,
+      ul {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.6667;
+      }
+
+      p {
+        margin-top: 18px;
+        margin-bottom: 18px;
+      }
+
+      ul {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        list-style-position: inside;
+      }
+
+      li {
+        padding-left: 50px;
+        margin-bottom: 18px;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p,
+      ul,
+      figure {
+        max-width: 100%/12*8;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $grid-space/2;
+        padding-right: $grid-space/2;
+      }
+
+      blockquote {
+        max-width: 100%/12*10;
+        margin: 64px auto;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        font-weight: 900;
+        letter-spacing: -.01em;
+
+        p {
+          max-width: 100%;
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+        }
+        cite {
+          font-style: inherit;
+        }
+      }
+
+      figure {
+        // margin: 60px auto 60px;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        &.aligncenter {
+          text-align: center;
+        }
+      }
+      @media screen and (max-width: map-get($breakpoints, 'lg')) {
+
+        blockquote {
+          max-width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p,
+        ul,
+        figure {
+          max-width: 100%/12*10;
+        }
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        li {
+          padding-left: 25px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p,
+        ul,
+        figure {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+}

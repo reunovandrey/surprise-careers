@@ -1,0 +1,141 @@
+/* ====================
+# Blog: COMMENTS
+==================== */
+.post {
+  &-page {
+    &-comments {
+      padding-top: 95px;
+    }
+
+    .comment {
+      &-notes {
+        display: none;
+      }
+    }
+  }
+
+  &-comments {
+    max-width: 100%/12*8;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $grid-space/2;
+    padding-right: $grid-space/2;
+
+    .comment {
+
+      // Comment Form
+      &-respond {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid $lightgrey1;
+      }
+
+      &-form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-columns: minmax(259px, auto);
+        gap: 1.5rem;
+        max-width: 100%;
+        padding-top: 24px;
+
+        p {
+          margin: 0;
+        }
+
+        &-comment,
+        &-cookies-consent {
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+      }
+
+      &-notes {
+        display: none;
+      }
+
+      // Comment List
+      &-list,
+      .children {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+
+        .children {
+          padding-left: 60px;
+        }
+      }
+
+      &-list {
+        padding-bottom: 15px;
+        border-bottom: 1px solid $lightgrey1;
+      }
+
+      &-body {
+        margin-bottom: 40px;
+
+        .reply {
+          font-weight: 800;
+          color: $primary;
+        }
+      }
+
+      &-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .says {
+          display: none;
+        }
+
+        time {
+          font-size: 0.875rem;
+          color: $midgrey;
+          font-weight: 400;
+        }
+
+        .comment-awaiting-moderation {
+          flex: 0 0 100%;
+          font-size: 0.75rem;
+        }
+      }
+
+      &-content {
+        padding-top: 15px;
+        padding-bottom: 9px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-comments {
+      max-width: 100%/12*10;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    &-comments {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    &-comments {
+      .comment {
+        &-form {
+          grid-template-columns: 1fr;
+
+          &-comment,
+          &-cookies-consent {
+            grid-column-start: 1;
+            grid-column-end: 1;
+          }
+        }
+      }
+    }
+  }
+}

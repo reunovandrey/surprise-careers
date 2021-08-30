@@ -1,0 +1,30 @@
+@import '../utils/functions';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@import '../base/include-media';
+
+.text-block{
+	text-align: center;
+	padding-left: 15%;
+	padding-right: 15%;
+
+	margin-top: 120px;
+	margin-bottom: 80px;
+
+	@include media("<tablet") {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&-wrapper {
+
+		p {
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 40px;
+			letter-spacing: -0.01em;
+			color: $midgrey;
+		}
+	}
+}

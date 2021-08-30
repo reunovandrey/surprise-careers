@@ -1,0 +1,51 @@
+{#
+/**
+ * Block Name: Hero slider block
+ */
+#}
+<div class="hero__wrapper">
+    <div id="hero-slider-block-{{ block.id }}" class="hero__slider__block">
+        <div class="hero__slider__main">
+            <div class="slides__text">
+                <div class="swiper-wrapper">
+                    {% for slide in fields.slides %}
+                        <div class="slide swiper-slide">
+                            <h1>{{ slide.slide_title }}</h1>
+                            <p>{{ slide.slide_description }}</p>
+                            <a href="{{ slide.link.url }}"
+                               class="bttn bttn-primary bttn-arrow">{{ slide.link.title }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="slides__images">
+                <div class="swiper-wrapper">
+                    {% for slide in fields.slides %}
+                        <div class="slide swiper-slide">
+                            <img src="{{ slide.image.url }}" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="hero__slider__nav">
+            {% for slide in fields.slides %}
+                <div class="preview {{ loop.index0 == 0 ? 'active' }}" data-slide="{{ loop.index0 }}">
+                    <img src="{{ slide.nav_button.icon.url | resize(64, 64) }}" alt="">
+                    <div class="preview__text">
+                        {{ slide.nav_button.text }}
+                    </div>
+                    <h4 class="preview__title">{{ slide.nav_button.title }}</h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% if is_preview %}
+    <script type="text/javascript">
+        heroSlider();
+    </script>
+{% endif %}

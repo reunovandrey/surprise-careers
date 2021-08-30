@@ -1,0 +1,27 @@
+{
+  "name": "surprise",
+  "version": "1.0.0",
+  "description": "Surprise theme npm dependencies",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp-cli": "^2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.2",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^4.1.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "install": "^0.13.0",
+    "npm": "^7.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

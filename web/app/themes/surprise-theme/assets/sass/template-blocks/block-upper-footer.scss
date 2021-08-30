@@ -1,0 +1,70 @@
+/* ====================
+# Block: HERO
+==================== */
+@import '../utilities/color';
+@import '../utilities/sizes';
+
+.section-upper-footer {
+
+  // General
+  .section {
+    &-wrapper {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: $primary;
+      color: $white;
+    }
+
+    &-title {
+      font-size: 3.125rem;
+      color: $white;
+    }
+    &-description {
+      p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  // App Links
+  .app-links {
+    display: flex;
+    justify-content: center;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 166px;
+      height: 48px;
+      border: 1px solid rgba(12, 13, 16, 0.16);
+      border-radius: 0.5rem;
+      line-height: 1;
+      background-color: $white;
+    }
+  }
+
+  .bttn {
+    &-group {
+      padding-top: 0.5rem;
+    }
+    &-stroke {
+      background-color: $white;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm' )) {
+    // General
+    .section {
+      &-wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      &-title {
+        line-height: 1.2;
+      }
+    }
+  }
+}

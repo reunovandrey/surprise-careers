@@ -1,0 +1,73 @@
+/* ====================
+# UTILITIES: VARIABLES
+==================== */
+// Surprise Grid Vars
+// Options
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-grid-classes: true !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px,
+) !default;
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+		xs: 346px,
+		sm: 560px,
+		md: 736px,
+		lg: 976px,
+		xl: 1264px
+) !default;
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:                12 !default;
+$grid-gutter-width:           16px !default;
+$grid-space:                  $grid-gutter-width / 2 !default;
+$grid-row-columns:            6 !default;
+
+
+
+/** Colors **/
+$white:         #ffffff !default;
+$black:         #000000 !default;
+$midnight:      #17191B !default;
+$rhino:         #414A55 !default;
+$midgrey:       #646F79 !default;
+$midgrey1:      #A0ABB5 !default;
+$lightgrey:     #7A869A !default;
+$lightgrey1:    #DCE5EC !default;
+$midnight_blue: #103867 !default;
+$brand_blue:    #147dfa !default;
+$light_blue:    #14E1FF !default;
+$alice_blue:    #F4F7FB !default;
+$alice_blue1:   #F1F7FF !default;
+$orange:        #FFAB00 !default;
+$stroke:		#DFE1E6 !default;
+
+
+$primary:         $brand_blue !default;
+$text_primary:    $midnight;
+$text_secondary:  $rhino !default;
+$text_tertiary:   $midgrey !default;
+$bg_secondary:    $alice_blue !default;
+$icon:            $lightgrey !default;
+
+$form_error : #ED3863;
+
+// Breakpoints
+$breakpoints: (
+		'phone': 575px,
+		'tablet': 767px,
+		'laptop': 991px,
+		'desktop': 1199px,
+) !default;

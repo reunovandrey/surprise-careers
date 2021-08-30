@@ -1,0 +1,39 @@
+.post-header {
+  &.sticky {
+    .post-share {
+      &-label {
+        display: none;
+      }
+    }
+  }
+}
+.post-share {
+  display: flex;
+  &-label {
+    color: $midgrey1;
+    line-height: 1.5;
+  }
+  &-list {
+    display: flex;
+    align-items: center;
+    margin: 0 (-$grid-space/2);
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      padding-left: $grid-space/2;
+      padding-right: $grid-space/2;
+    }
+    a {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+    img, svg {
+      display: block;
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    padding-top: 1rem;
+  }
+}

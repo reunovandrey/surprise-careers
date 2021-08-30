@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% block main %}
+    <main class="careers">
+        <div class="wrapper">
+            <section class="hero">
+                <h1>{{ post.title }}</h1>
+            </section>
+
+            <section class="careers__block">
+                <h4>Some info block</h4>
+            </section>
+
+            <section class="careers__block">
+                <h4>Some info block</h4>
+            </section>
+
+            <section class="careers__block">
+                <h4>Some info block</h4>
+            </section>
+
+            <section class="careers__block careers__block-filter">
+                <h2>Job openings</h2>
+
+                <form action="" class="careers__form">
+                    <div class="careers__selectors">
+                        <div class="careers__selector">
+                            <label for="">Choose a team
+                                <select name="careers_category" id="careers_category">
+                                    <option value="-1">- All -</option>
+                                    {% for cat in categories %}
+                                        <option value="{{ cat.term_id }}">{{ cat.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <div class="careers__selector">
+                            <label for="">Choose location
+                                <select name="careers_location" id="careers_location">
+                                    <option value="-1">- All -</option>
+                                    {% for loc in locations %}
+                                        <option value="{{ loc.term_id }}">{{ loc.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                {% for job in careers %}
+                    <div class="career career__line">
+                        <h4 class="career__title">{{ job.post_title }}</h4>
+                        <div class="career__location">{{ job.meta('location') | join(',') }}</div>
+                        <a href="{{ job.link }}" class="career__more">Learn more</a>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </main>
+{% endblock %}

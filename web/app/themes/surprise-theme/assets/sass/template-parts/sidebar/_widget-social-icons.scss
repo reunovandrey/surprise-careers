@@ -1,0 +1,57 @@
+.widget {
+  &_social_widget {
+    background-color: $bg_secondary;
+    border-color: $bg_secondary;
+  }
+  .social {
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      padding-top: 0.5rem;
+      &-item {
+        padding-left: 23px;
+        padding-right: 23px;
+        &:not(:last-child) {
+          margin: 12px 0;
+        }        
+      }
+      &-link {
+        display: flex;
+        align-items: center;
+      }
+      img, svg {
+        margin-right: 12px;
+      }
+    }    
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg' )) {
+    &_social_widget {
+      padding-bottom: 14px;
+    }
+    .social {
+      &-list {
+        columns: 2;
+        column-gap: 28px;
+        &-item {
+          margin-top: 0;
+          margin-bottom: 12px;
+          &:not(:last-child) {
+            margin-top: 0;
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg' )) {
+    &_social_widget {
+      padding-bottom: 10px;
+    }
+    .social {
+      &-list {
+        columns: auto;
+      }
+    }
+  }
+}

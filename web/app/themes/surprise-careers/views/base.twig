@@ -1,0 +1,127 @@
+{% block html_head_container %}
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+<body class="{{body_class}}">
+{{ function('get_option', 'after_body_start') }}
+<div class="sdc-overlay"></div>
+<div class="site-page">
+    <header class="header">
+
+        <div class="header__mobile">
+            <div class="container">
+                <nav class="mobile__menu">
+                    {% include 'template-parts/common/menu.twig' with { 'menu_items' : primary_menu.items} %}
+                </nav>
+
+                {% if header_options.sign_in.url %}
+                    {# show Sign In link only if URL is not empty #}
+                    <a href="{{ header_options.sign_in.url }}"
+                       class="header__mobile__signin"
+                       target="{{ header_options.sign_in.target }}">{{ header_options.sign_in.text }}
+                    </a>
+                {% endif %}
+
+                <div class="header__mobile__buttons">
+                    {% include 'template-parts/header/app-buttons.twig' %}
+                </div>
+            </div>
+        </div>
+        <div class="header__wrapper">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__brand">
+                        {% include 'template-parts/common/logo.twig' with {'logo_file': 'surprise-logo.svg'} %}
+                    </div>
+                    <div class="header__navbar">
+                        <nav class="header__menu">
+                            {% include 'template-parts/common/menu.twig' with { 'menu_items' : primary_menu.items} %}
+                            <div class="header__cta">
+
+                                {% if header_options.sign_in.url %}
+                                    {# show Sign In link only if URL is not empty #}
+                                    <a href="{{ header_options.sign_in.url }}"
+                                       class="header__signin"
+                                       target="{{ header_options.sign_in.target }}">{{ header_options.sign_in.text }}
+                                    </a>
+                                {% endif %}
+
+                                {% if header_options.cta_desktop.url %}
+                                    {# show desktop CTA button only if URL is not empty #}
+                                    <a href="{{ header_options.cta_desktop.url }}"
+                                       class="bttn bttn-primary"
+                                       target="{{ header_options.cta_desktop.target }}">{{ header_options.cta_desktop.text }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </nav>
+
+                        {% if header_options.cta_mobile.url %}
+                        {# show mobile CTA button only if URL is not empty #}
+                            <a href="{{ header_options.cta_mobile.url }}"
+                               rel="noopener"
+                               class="bttn bttn-primary bttn-sm bttn-try"
+                               target="{{ header_options.cta_mobile.target }}">{{ header_options.cta_mobile.text }}
+                            </a>
+                        {% endif %}
+
+                        <button aria-label="Menu" type="button" class="header__mobmenu header__mobmenu-toggle">
+                            {% include site.theme.url ~ '/assets/images/burger-menu.svg' %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if header_options.banner_mobile %}
+            {# show mobile banner only if it is not empty #}
+            <div class="header__banner">
+                <p>{{ header_options.banner_mobile }}</p>
+            </div>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block main %}
+            nothing to show
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo">
+                    {% include 'template-parts/common/logo.twig' with {'logo_file': 'surprise-logo-footer.svg'} %}
+                </div>
+                <nav class="footer__menu">
+                    {% include 'template-parts/common/menu.twig' with { 'menu_items' : footer_menu.items} %}
+                </nav>
+                <div class="footer__contacts footer__contacts-line-1" id="cont_line1">
+                    {{ footer_options.contacts_line_1 }}
+                </div>
+                <div class="footer__copyrights" id="copyrights">
+                    <p>{{ footer_options.copyrights }}</p>
+                </div>
+                <nav class="footer__social">
+                    <ul>
+                        {% for item in footer_options.social_icons %}
+                            <li>
+                                <a href="{{ item.link_url }}">
+                                    {{ item.icon_source | raw }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                <div class="footer__contacts footer__contacts-line-2" id="cont_line2">
+                    {{ footer_options.contacts_line_2 }}
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{{ function('wp_footer') }}
+{{ function('get_option', 'before_body_end') }}
+</body>
+</html>

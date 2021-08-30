@@ -1,0 +1,28 @@
+/* ====================
+# FONTS
+==================== */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin font-face($font-family, $file-name, $file-path, $weight, $style: normal) {
+  @font-face {
+	font-family: $font-family;
+	font-weight: $weight;
+	font-style: $style;
+	font-display: swap;
+	src: url('#{$file-path}.eot');
+	src: local('#{$file-name}'),
+	url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+	url('#{$file-path}.woff') format('woff'),
+	url('#{$file-path}.ttf') format('truetype');
+  }
+}
+$font_primary: 'Avenir';
+$font_path_1: '../fonts/Avenir/';
+
+// Primary Font
+@include font-face($font_primary, $font_primary + '-Roman',  $font_path_1 + $font_primary + '-Roman',  400);
+@include font-face($font_primary, $font_primary + '-Medium',   $font_path_1 + $font_primary + '-Medium',   500);
+@include font-face($font_primary, $font_primary + '-Heavy',    $font_path_1 + $font_primary + '-Heavy',    800);
+@include font-face($font_primary, $font_primary + '-Black',    $font_path_1 + $font_primary + '-Black',    900);

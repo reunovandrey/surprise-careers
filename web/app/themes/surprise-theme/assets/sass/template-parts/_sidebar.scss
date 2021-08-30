@@ -1,0 +1,34 @@
+/* ====================
+# SIDEBAR
+==================== */
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 48px;  
+}
+.widget {
+  max-width: 292px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 23px 0;
+  border: 1px solid transparent; 
+  border-radius: 1rem;
+  &-title {
+    margin-bottom: .5rem;
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+  @media screen and (max-width: map-get($breakpoints, 'xl')) {
+    max-width: 304px;
+    &-title {
+      font-size: 1.25rem;
+    }
+  }
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    max-width: 100%;
+  }
+}
+
+@import 'sidebar/widget-social-icons';
+@import 'sidebar/widget-popular-posts';

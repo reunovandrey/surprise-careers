@@ -1,0 +1,42 @@
+{#
+/**
+ * Block Name: Two Columns block
+ *
+ * This is the template that displays the example block.
+ */
+#}
+<div class="two-col-block-wrapper">
+    <div class="container">
+        <div id="two-col-block-{{ block.id }}" class="two-col-block {{ fields.block_reverse_columns ? 'reverse' }}">
+            <div class="block-col">
+                {% if fields.block_img_type %}
+                    <img src="{{ Image(fields.block_image.url) }}" alt="">
+                {% else %}
+                    <div class="lottie" data-animation="{{ fields.block_lottie.url }}"></div>
+                {% endif %}
+            </div>
+            <div class="block-col block-col-texts">
+                {% if fields.block_preheader %}
+                    <span>{{ fields.block_preheader }}</span>
+                {% endif %}
+                {% if fields.block_header %}
+                    <h2>{{ fields.block_header }}</h2>
+                {% endif %}
+                {% if fields.block_text %}
+                    <div class="bleck-description">
+                        {{ fields.block_text | wpautop }}
+                    </div>
+                {% endif %}
+                {% if fields.block_link %}
+                    <a target="{{ fields.block_link.target }}"
+                       href="{{ fields.block_link.url }}">{{ fields.block_link.title }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% if is_preview %}
+    <script type="text/javascript">
+        lottieAnimation();
+    </script>
+{% endif %}

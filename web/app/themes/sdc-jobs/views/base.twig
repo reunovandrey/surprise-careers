@@ -1,0 +1,42 @@
+{% block html_head_container %}
+
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+<body>
+
+    {% block main %}
+        nothing to show
+    {% endblock %}
+    <footer class="footer">
+        <div class="footer__logo">
+            footer logo
+        </div>
+
+        {% if footer_menu %}
+            <nav class="footer__menu">
+                {% include 'template-parts/footer/menu.twig' with {'items': footer_menu.items} %}
+            </nav>
+        {% endif %}
+
+        <div class="footer__copyrights">
+            <p>&copy; 2021 Surprise.com, Inc.</p>
+        </div>
+
+        <div class="footer__socials">
+            social links here
+        </div>
+
+        <div class="footer__info footer__info-line-1">
+            <p>US Sales: +1 (415) 795 7357</p>
+        </div>
+
+        <div class="footer__info footer__info-line-2">
+            <p>US Customer Support: +1 (888) 858 7373</p>
+        </div>
+    </footer>
+    {{ function('wp_footer') }}
+</body>
+</html>

@@ -1,0 +1,194 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none; }
+
+footer, header, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+/* ====================
+# FONTS
+==================== */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Roman.eot");
+  src: local("Avenir-Roman"), url("../fonts/Avenir/Avenir-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Roman.woff") format("woff"), url("../fonts/Avenir/Avenir-Roman.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Medium.eot");
+  src: local("Avenir-Medium"), url("../fonts/Avenir/Avenir-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Medium.woff") format("woff"), url("../fonts/Avenir/Avenir-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Heavy.eot");
+  src: local("Avenir-Heavy"), url("../fonts/Avenir/Avenir-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Heavy.woff") format("woff"), url("../fonts/Avenir/Avenir-Heavy.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Black.eot");
+  src: local("Avenir-Black"), url("../fonts/Avenir/Avenir-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Black.woff") format("woff"), url("../fonts/Avenir/Avenir-Black.ttf") format("truetype"); }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 24px; }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.careers__block {
+  padding: 40px;
+  border: 1px dashed silver;
+  margin: 20px auto; }
+
+.careers__selectors {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; }
+
+.careers__selector {
+  border: 1px dashed silver;
+  margin: 20px;
+  padding: 20px; }
+
+.job__block {
+  padding: 40px;
+  border: 1px dashed silver;
+  margin: 20px auto; }
+  .job__block.visuals video, .job__block.visuals img {
+    max-height: 200px; }
+
+.job__skills {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  margin: 40px; }
+
+.job__skill {
+  align-self: stretch; }
+
+.career {
+  display: flex;
+  justify-content: space-between; }
+  .career__line {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    margin: 3px; }
+
+/**
+* TABS
+ */
+.tab__navigation {
+  display: flex; }
+
+.tab__link {
+  margin-right: 10px; }
+  .tab__link a {
+    padding: 10px 20px;
+    text-decoration: none; }
+    .tab__link a.active {
+      background-color: lightcyan; }
+
+.tab__content {
+  display: none; }
+  .tab__content.active {
+    display: block; }
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Avenir";
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  letter-spacing: -0.01em; }
+
+a {
+  color: #147dfa; }
+
+a,
+button,
+*[type="submit"],
+*[type="button"] {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition-property: color, background-color, border, box-shadow, transform;
+  transition-duration: .3s;
+  transition-timing-function: linear; }
+
+a:hover {
+  color: #0564d6; }
+
+.footer {
+  color: #646F79; }
+
+.footer__menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0; }
+  .footer__menu ul li {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; }
+    .footer__menu ul li a {
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+      font-weight: 500;
+      color: inherit;
+      font-size: 14px; }
+      .footer__menu ul li a:hover {
+        color: #0564d6; }

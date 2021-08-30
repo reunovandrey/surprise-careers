@@ -1,0 +1,112 @@
+/* ====================
+# HEADER: Site Header
+==================== */
+.site-header {
+  &-wrapper {
+    position: relative;
+    background-color: $white;
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+    z-index: 100;
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')){
+      height: 64px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -$grid-space;
+    margin-right: -$grid-space;
+  }
+
+  &-mobmenu {
+    display: none;
+  }
+
+  &-appbuttons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-wrapper {
+      box-shadow: 0px 2px 8px rgba($midnight, .04);
+    }
+    &-mobmenu {
+      display: block;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      /* Burger Menu */
+      .burger {
+        &-icon {
+          position: relative;
+          z-index: 90;
+          transition: transform .4s ease;
+          transform: scale(1.25);
+          fill: currentColor;
+        }
+
+        &-line {
+          fill: none;
+          transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+          stroke: currentColor;
+          stroke-width: 5.5;
+          stroke-linecap: round;
+
+          &-top {
+            stroke-dasharray: 40 172;
+          }
+
+          &-middle {
+            stroke-dasharray: 40 111;
+          }
+
+          &-bottom {
+            stroke-dasharray: 40 172;
+          }
+        }
+      }
+
+      &.active {
+        .burger {
+          &-line {
+            &-top {
+              stroke-dashoffset: -132px;
+            }
+
+            &-middle {
+              stroke-dashoffset: -71px;
+            }
+
+            &-bottom {
+              stroke-dashoffset: -132px;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    .container {
+      max-width: 364px;
+    }
+  }
+}

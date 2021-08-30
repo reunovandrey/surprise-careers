@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+    <header class="page__heading">
+        <div class="container">
+            <div class="heading__meta">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li><a href="{{ site.url }}">Home</a></li>
+                        <li><a href="{{ site.url }}/career">Join the Team</a></li>
+                        {% if job %}
+                            <li><a href="{{ job.link }}">{{ job.title }}</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                <h2 class="heading__title">{{ post.title }}</h2>
+                <div class="heading__subtitle">{{ subtitle }}</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page__content">
+        <div class="container">
+            {{ post.content }}
+        </div>
+    </section>
+
+    <section class="form__section form__section-referral">
+        <div class="container">
+            <h2 class="form__title">Referring a Friend</h2>
+            {% filter shortcodes %}
+                [contact-form-7 id="207" title="Referral form"]
+            {% endfilter %}
+
+        </div>
+    </section>
+
+
+{% endblock %}

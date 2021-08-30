@@ -1,0 +1,15 @@
+.footer__contacts {
+	text-align: right;
+
+	&-line-1 {
+		@include media("<laptop") {
+			margin-top: 32px;
+		}
+	}
+
+	&-line-2 {
+		@include media("<laptop") {
+			margin-top: 12px;
+		}
+	}
+}

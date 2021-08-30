@@ -1,0 +1,71 @@
+.footer {
+	padding-top: 48px;
+	padding-bottom: 48px;
+	background-color: $alice_blue;
+	color: $midgrey;
+	font-size: 0.875rem;
+
+	&__inner {
+		display: grid;
+		align-items: center;
+		grid-template-areas:
+			"tl tc tr"
+			"bl bc br";
+		column-gap: 16px;
+		grid-template-columns: repeat(3, 1fr);
+
+		@include media("<laptop") {
+			grid-template-areas:
+				"fb"
+				"fm"
+				"fi"
+				"fi"
+				"fs"
+				"fc";
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			justify-items: center;
+		}
+	}
+
+	&__social {
+		ul {
+			display: flex;
+			list-style: none;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		a {
+			display: block;
+			color: $lightgrey;
+
+			&:hover {
+				color: $brand_blue;
+			}
+		}
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+		letter-spacing: -0.2px;
+	}
+}
+
+.single-career .footer {
+	background-color: $alice_blue;
+}
+
+@import "footer/nav";
+@import "footer/contacts";
+@import "footer/copyrights";
+@import "footer/social";

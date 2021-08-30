@@ -1,0 +1,48 @@
+/* ====================
+# Blog: RELATED POSTS
+==================== */
+@import 'article-card';
+.post {
+  &-related {
+
+    @import './blog/general';
+
+    padding-top: 45px;
+    padding-bottom: 60px;
+
+    &-inner {
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 100%/12*8;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: $grid-space/2;
+      padding-right: $grid-space/2;
+    }
+
+    &-title {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      &-inner {
+        max-width: 100%/12*10;
+      }
+    }
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      &-inner {
+        max-width: 100%;
+      }
+    }
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      &-inner {
+        grid-template-columns: 1fr;
+      }
+      &-title {
+        grid-column-end: 2;
+      }
+    }
+  }
+}

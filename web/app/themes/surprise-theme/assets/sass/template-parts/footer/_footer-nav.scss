@@ -1,0 +1,38 @@
+/* ====================
+# FOOTER: Footer Nav
+==================== */
+.site-footer {
+  &-navbar {
+    grid-area: tc / tc;
+  }
+  .footer-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > li {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    a {
+      display: block;
+      font-weight: 500;
+      white-space: nowrap;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    &-navbar {
+      grid-area: fm;
+      margin-top: 31px;
+    }
+
+    .footer-menu a{
+      letter-spacing: 0;
+    }
+  }
+}

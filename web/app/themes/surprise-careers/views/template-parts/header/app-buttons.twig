@@ -1,0 +1,18 @@
+{% if not user_device.is_mobile %}
+    <div class="get-the-app">
+        {% include site.theme.url ~ '/assets/images/app-store-inverted.svg' %}
+    </div>
+    <div class="get-the-app">
+        {% include site.theme.url ~ '/assets/images/google-play-inverted.svg' %}
+    </div>
+{% else %}
+    {% if user_device.is_iphone %}
+        <a href="{{ app_buttons.app_store }}" target="{{ app_buttons.target }}" class="get-the-app">
+            {% include site.theme.url ~ '/assets/images/app-store-inverted.svg' %}
+        </a>
+    {% else %}
+        <a href="{{ app_buttons.play_market }}" target="{{ app_buttons.target }}" class="get-the-app">
+            {% include site.theme.url ~ '/assets/images/google-play-inverted.svg' %}
+        </a>
+    {% endif %}
+{% endif %}

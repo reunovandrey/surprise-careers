@@ -1,0 +1,112 @@
+@import '../utils/functions';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@import '../base/include-media';
+
+.two-col-block {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	@include media("<tablet") {
+		flex-direction: column;
+	}
+
+	&-wrapper {
+		width: 100%;
+		display: inline-block;
+		margin-top: 64px;
+		margin-bottom: 64px;
+
+		@include media("<laptop") {
+			margin-top: 32px;
+			margin-bottom: 32px;
+		}
+
+		@include media("<tablet") {
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&.reverse {
+		flex-direction: row-reverse;
+
+		@include media ("<tablet") {
+			flex-direction: column;
+		}
+	}
+
+	@include media ("<tablet") {
+		flex-direction: column;
+	}
+
+	.block-col {
+		flex-basis: 50%;
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		img {
+			display: block;
+			border-radius: 8px;
+		}
+
+		&-texts {
+			padding: 0 60px;
+
+			@include media("<laptop") {
+				padding: 0 24px;
+			}
+			@include media("<tablet") {
+				padding: 24px 0;
+			}
+		}
+	}
+	
+	h2 {
+		color: #17191B;
+		font-size: 40px;
+		line-height: 48px;
+	}
+
+	span {
+		color: $midgrey1;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.01em;
+	}
+	
+	p {
+		color: $midgrey;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 32px;
+		letter-spacing: -0.01em;
+		margin-top: 16px;
+		margin-bottom: 24px;
+	}
+
+	a {
+		color: $primary;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 32px;
+		letter-spacing: -0.01em;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 10px;
+			height: 16px;
+			margin-left: 3px;
+			background-image: url(../../images/arrow-blue.svg);
+			background-position: center center;
+			background-size: cover;
+			vertical-align: middle;
+			margin-left: 10px;
+		}
+
+	}
+}

@@ -1,0 +1,119 @@
+/* ====================
+# COMPONENTS: FORMS
+==================== */
+input {
+
+  &[type="text"],
+  &[type="email"],
+  &[type="number"],
+  &[type="search"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $lightgrey1;
+    border-radius: 22px;
+    transition: border-color .3s linear;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 1px solid $lightgrey1;
+  border-radius: 22px;
+  transition: border-color .3s linear;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
+}
+
+// Searchform
+.searchform {
+  &-blog {}
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &-label {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    .searchform-field {
+      visibility: hidden;
+      max-width: 0;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      border-color: rgba($primary, 0);
+      background-color: transparent;
+      transition-property: max-width, border-color;
+      transition-duration: 0.5s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+      user-select: none;
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+  }
+
+  &-icon {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    padding: 10px 2px 16px;
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+
+    svg {
+      display: block;
+    }
+  }
+
+  // Expanded Form
+  &.searchform-show {
+    .searchform-field {
+      max-width: 300px;
+      visibility: visible;
+      // border-color: $primary;
+      border-color: rgba($primary, 0);
+      user-select: auto;
+    }
+    .searchform-icon {
+      // opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg' )) {
+    .searchform {
+      &-label {
+        .searchform-field {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm' )) {
+    &.searchform-show {
+      .searchform-field {
+        max-width: 210px;
+      }
+    }
+  }
+}

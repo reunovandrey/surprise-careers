@@ -1,0 +1,17 @@
+.header {
+	&__brand {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	&__logo {
+		max-width: 141px;
+
+		img,
+		svg {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+}

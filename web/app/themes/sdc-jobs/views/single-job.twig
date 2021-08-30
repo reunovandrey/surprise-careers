@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+
+{% block main %}
+    <main class="job">
+        <div class="wrapper">
+            <h1>{{ post.title }}</h1>
+
+            <section class="job__block visuals">
+                {% for vis_item in post.meta('visuals') %}
+                    {% if vis_item.type == 'video' %}
+                        <video src="{{ vis_item.url }}" controls></video>
+                    {% endif %}
+
+                    {% if vis_item.type == 'image' %}
+                        <img src="{{ vis_item.url }}" alt="">
+                    {% endif %}
+
+                {% endfor %}
+            </section>
+
+            <aside class="job__block job__meta">
+                <div class="job__location">
+                    Location: {{ post.meta('location') | join(',') }}
+                </div>
+                <div class="job__category">
+                    Category: {{ post.meta('category') }}
+                </div>
+            </aside>
+
+            <section class="job__block">
+                <ul class="tab__navigation">
+                    <li class="tab__link"><a href="#overview" class="active">Overview</a></li>
+                    <li class="tab__link"><a href="#requirements">Requirements</a></li>
+                    <li class="tab__link"><a href="#responsibilities">Responsibilities</a></li>
+                </ul>
+
+            </section>
+
+            <section class="job__block overview tab__content active" id="overview">
+                <h3>REQUIRED SKILLS</h3>
+                <div class="job__skills">
+
+
+                {% for skill in post.meta('tech_stack') %}
+                    <div class="job__skill">
+                        <label for="">
+                            {{ skill.technology.name }}
+                            <progress max="5" value="{{ skill.importance }}"></progress>
+                        </label>
+                    </div>
+                {% endfor %}
+                </div>
+
+                <h3>Overview</h3>
+                {{ post.meta("overview") }}
+            </section>
+
+            <section class="job__block requirements tab__content" id="requirements">
+                <h3>Requirements</h3>
+                <ul>
+                    {% for req_item in post.meta('requirements') %}
+
+                        <li><h4>{{ req_item.title }}</h4>
+                            {{ req_item.text }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="job__block responsibilities tab__content" id="responsibilities">
+                <h3>Responsibilities</h3>
+                <ul>
+                    {% for resp_item in post.meta('responsibilities') %}
+
+                        <li><h4>{{ resp_item.title }}</h4>
+                            {{ resp_item.text }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="job__block apply" id="apply">
+                Here will be apply form
+                <input type="submit" value="APPLY">
+            </section>
+        </div>
+    </main>
+{% endblock %}

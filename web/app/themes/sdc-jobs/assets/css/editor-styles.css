@@ -1,0 +1,76 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none; }
+
+footer, header, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+/* ====================
+# FONTS
+==================== */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Roman.eot");
+  src: local("Avenir-Roman"), url("../fonts/Avenir/Avenir-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Roman.woff") format("woff"), url("../fonts/Avenir/Avenir-Roman.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Medium.eot");
+  src: local("Avenir-Medium"), url("../fonts/Avenir/Avenir-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Medium.woff") format("woff"), url("../fonts/Avenir/Avenir-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Heavy.eot");
+  src: local("Avenir-Heavy"), url("../fonts/Avenir/Avenir-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Heavy.woff") format("woff"), url("../fonts/Avenir/Avenir-Heavy.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Avenir/Avenir-Black.eot");
+  src: local("Avenir-Black"), url("../fonts/Avenir/Avenir-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Avenir/Avenir-Black.woff") format("woff"), url("../fonts/Avenir/Avenir-Black.ttf") format("truetype"); }

@@ -1,0 +1,31 @@
+/* ====================
+# HEADER: Site Branding
+==================== */
+.site-header {
+  &-brand {
+    // margin-right: $grid-space;
+    padding-left: $grid-space;
+    padding-right: $grid-space;
+
+    @media all and(max-width: map-get($breakpoints, 'lg')){
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .custom-logo-link {
+      display: block;
+    }
+    img {
+      display: block;
+      width: 141px;
+    }
+  }
+
+  &-logo {
+    margin-left: 2px;
+    @media all and(max-width: map-get($breakpoints, 'sm')){
+      margin-bottom: 1px;
+      margin-left: 4px;
+    }
+  }
+}

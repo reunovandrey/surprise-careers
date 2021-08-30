@@ -1,0 +1,209 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+    <header class="page__heading">
+        <div class="container">
+            <div class="heading__meta">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="{{ site.url }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ site.url }}/careers">Join the Team</a>
+                        </li>
+                    </ul>
+                </nav>
+                <h2 class="heading__title">{{ post.title }}</h2>
+                <div class="heading__subtitle">{% include site.theme.url ~ '/assets/images/icons/map-icon.svg' %}{{ post.terms({query: {taxonomy: 'locations'}}) | join(',') }}</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="career__content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-9 col-main-content">
+                    {% if post.meta('tech_stack') %}
+                    <h3>Required skills</h3>
+                    <div class="skills">
+                        {% for skill in post.meta('tech_stack') %}
+                            <div class="skills__item">
+                                <label>
+                                    {{ skill.technology.name }}
+                                    <div class="skill__progress__bar level-{{ skill.importance }}">
+                                        {% for i in 0..3 %}
+                                            <div class="part part-{{ loop.index }} "></div>
+                                        {% endfor %}
+                                    </div>
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="career__visuals">
+
+                        <div class="swiper-container visuals__thumb-nav">
+                            <div class="swiper-wrapper">
+                                {% for visual in post.meta('visuals') %}
+                                    <div class="swiper-slide">
+                                        <img src="{{ visual.url | resize(94,128) }}" alt="">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="swiper-container visuals__slider">
+                            <div class="swiper-wrapper">
+                                {% for visual in post.meta('visuals') %}
+                                    <div class="swiper-slide">
+                                        <img src="{{ visual.url }}" alt="">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career__visuals-description">
+                        {{ post.meta('visuals_description') | wpautop }}
+                    </div>
+                    <nav class="career__tabs">
+                        <ul>
+                            <li class="career__tab active"><a href="#overview">Overview</a></li>
+                            <li class="career__tab"><a href="#requirements">Requirements</a></li>
+                            <li class="career__tab"><a href="#responsibilities">Responsibilities</a></li>
+
+                            {% if post.categories[0].hiring_process %}
+                                <li class="career__tab"><a href="#hiring">Hiring process</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+
+                    <div class="career__tabcontent tab-overview active" id="overview" data-title="Overview">
+                        <h3>Overview</h3>
+                        <div class="tab-inner-wrapper">
+                            {{ post.overview | wpautop }}
+                            <button class="close-section">{{ __('Close', 'surprise') }}</button>
+                        </div>
+                    </div>
+
+                    <div class="career__tabcontent tab-requirements" id="requirements" data-title="Requirements">
+                        <h3>Requirements</h3>
+                        <div class="tab-inner-wrapper">
+                            <ul>
+                                {% for req in post.meta('requirements') %}
+                                    <li>
+                                        <h4>{{ req.title }}</h4>
+                                        {% if req.description %}
+                                            {{ req.description | wpautop }}
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <button class="close-section">{{ __('Close', 'surprise') }}</button>
+                        </div>
+                    </div>
+                    <div class="career__tabcontent tab-responsibilities" id="responsibilities" data-title="Responsibilities">
+                        <h3>Responsibilities</h3>
+                        <div class="tab-inner-wrapper">
+                            <ul>
+                                {% for resp in post.meta('responsibilities') %}
+                                    <li>
+                                        <h4>{{ resp.title }}</h4>
+                                        {% if resp.description %}
+                                            {{ resp.description | wpautop }}
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <button class="close-section">{{ __('Close', 'surprise') }}</button>
+                        </div>
+                    </div>
+                    {% if post.categories[0].hiring_process %}
+                        <div class="career__tabcontent tab-hiring" id="hiring" data-title="Hiring process">
+                            <h3>Hiring process</h3>
+                            <div class="tab-inner-wrapper">
+                                {{ post.categories[0].hiring_process | wpautop }}
+                                <button class="close-section">{{ __('Close', 'surprise') }}</button>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="col-3 col-aside">
+                    <div class="block block__reqruiter">
+                        <div class="avatar">
+                            <img src="{{ post.author.avatar({ size: 120 }) }}" alt="{{ post.author.display_name }}">
+                        </div>
+                        <h3>{{ post.author.display_name }}</h3>
+                        <span>Your recruiter in Surprise.com</span>
+                        <div>
+                            <a href="#apply_form" class="bttn bttn-primary bttn-apply">Apply</a>
+                        </div>
+                        <p>or <a href="{{ cta_block.button.url }}">Refer a friend</a></p>
+                    </div>
+
+                    {% if post.meta("benefits") %}
+                    <div class="block block__benefits no-bg">
+                        <div class="swiper-container benefits-slider">
+                            <div class="swiper-wrapper">
+                                {% for benefit in post.meta("benefits") %}
+                                    <div class="swiper-slide slide__benefits" style="background-color: {{ benefit.meta("card_color") }}">
+                                        <h5 class="slide__title">{{ benefit.name }}</h5>
+                                        <div class="slide__icon__wrapper">
+                                            <img class="slide__icon" src="{{ benefit.icon.url }}" alt="{{ benefit.name }}">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="swiper-controls">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="block block__share">
+                        <h4>Share this vacancy</h4>
+                        {% include '/template-parts/common/share-links.twig' with {showlabels: 1} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="apply form__section form__section-apply" id="apply_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="form__title">Apply for {{ post.title }}</h2>
+                </div>
+            </div>
+            {% filter shortcodes %}
+                [contact-form-7 id="87" title="Apply form" job-id="{{ post.ID }}"]
+            {% endfilter %}
+            <div class="form-thank-you">
+                <img src="{{ site.theme.uri }}/assets/images/form-success.svg" alt="">
+                <h3>Thank you! We have received your application!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a vulputate enim. Curabitur nec dui molestie.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="share-mobile">
+        <div class="container">
+            <div class="block block__share">
+                <h4>Share this vacancy</h4>
+                {% include '/template-parts/common/share-links.twig' %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'template-parts/common/cta-block.twig' %}
+
+{% endblock %}

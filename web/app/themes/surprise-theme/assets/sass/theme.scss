@@ -1,0 +1,25 @@
+/** Main Template Styles **/
+// utilities
+@import 'utilities/functions';
+@import 'utilities/color';
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'utilities/grid';
+
+
+// base
+@import 'base/normalize';
+@import 'base/fonts';
+@import 'base/general';
+@import 'base/typography';
+
+// components
+@import 'components/buttons';
+@import 'components/forms';
+
+// template parts
+
+@import 'template-parts/header';
+@import 'template-parts/footer';
+
+// template blocks
